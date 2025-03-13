@@ -1,19 +1,19 @@
 start_msg: |
-      برای اینکه اطلاعات فیلترشکن رو ببینی نیازه یکی از موارد زیر رو بفرستی
-      QrCode - UUID - Vless - Vmess - remark
-      اگ نمیدونی چجوری یکی ازینارو بدست بیاری رو /what بزن
+To see the filter breaker information, you need to send one of the following
+QrCode - UUID - Vless - Vmess - remark
+If you don't know how to get one of these, type /what
 
 help_msg: |
-      نسبت به اینکه چه نرم افزاری نصب داری فرق میکنه...
-      اگ نمیدونی چجوری پیداش کنی روی /what بزن
+It depends on what software you have installed...
+If you don't know how to find it, type /what
 
 channel_msg: |
-      کاربر گرامی لطفا برای استفاده از ربات ، ابتدا در کانال زیر عضو شوید 👀 
-      🆔 @your_channel_id
-      و سپس دوباره دستور /start را ارسال کنید
+Dear user, to use the bot, please first subscribe to the following channel 👀 
+🆔 @premium_channel_404
+and then send the /start command again
 
-not_found: "<b>📍اطلاعات اکانت شما پیدا نشد!</b> \n مطمئنید <b>QrCode - UUID - Vless - Vmess - remark</b> رو درست وارد کردین؟ \n اگه نمیدونین چجوری یکی ازینا رو بدست بیارین رو /what بزنید... \n  نسبت به اینکه چه نرم افزاری نصب دارین به شما کمک میکنم."
-acc_info: 💠 اطلاعات سرویس شما تا این لحظه 💠
-whatapp_msg: چه نرم افزاری استفاده میکنید؟
+not_found: "<b>📍Your account information was not found!</b> \n Are you sure you entered <b>QrCode - UUID - Vless - Vmess - remark</b> correctly? \n If you don't know how to get one of these, type /what... \n I will help you with what software you have installed."
+acc_info: 💠 Your service information so far 💠
+whatapp_msg: What software are you using?
 
-qrcode: لطفا لینک اکانت را ارسال کنید
+qrcode: Please send the account link
