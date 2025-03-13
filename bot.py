@@ -78,7 +78,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     user_name = update.message.from_user.first_name
     user_id = update.message.from_user.id
 
-    await update.message.reply_text(f"سلام {user_name} عزیز خوش اومدی\n" + msg_yaml['start_msg'])
+    await update.message.reply_text(f"မင်္ဂလာပါ {user_name} ကြိုဆိုပါတယ် ချစ်တို့ရေ။\n" + msg_yaml['start_msg'])
 
     if channel_id:
         is_member = await check_membership(context, channel_id, user_id)
@@ -141,7 +141,7 @@ async def get_account_info(update: Update, context: ContextTypes.DEFAULT_TYPE) -
             decode_qrcode = decode_objects[0].data.decode("utf-8")
             acc_info = account_info(decode_qrcode)
         else:
-            await update.message.reply_text("لطفا QRCode ارسال کنید")
+            await update.message.reply_text("QRCode ပေးပို့ပါ။")
             return ConversationHandler.END
 
     else:
@@ -166,7 +166,7 @@ async def get_account_info(update: Update, context: ContextTypes.DEFAULT_TYPE) -
                 client_msg = accounts.split()[0]
 
             except requests.exceptions.RequestException as e:
-                await update.message.reply_text("در خواندن لینک ساب شما مشکلی پیش آمد")
+                await update.message.reply_text("သင်၏ Sub Link ကို ဖတ်ရာတွင် ပြဿနာရှိနေသည်။")
 
         acc_info = account_info(client_msg)
 
@@ -178,19 +178,19 @@ async def get_account_info(update: Update, context: ContextTypes.DEFAULT_TYPE) -
     rem_time, expiry = expiry
     
     keyboard = [
-        [InlineKeyboardButton(f"نام اکانت: {account_name}", callback_data='1')],
-        [InlineKeyboardButton(f"⚙️ وضعیت اکانت: {status}", callback_data='1')],
+        [InlineKeyboardButton(f"အကောင့်အမည်: {account_name}", callback_data='1')],
+        [InlineKeyboardButton(f"⚙️ အကောင့်အခြေအနေ: {status}", callback_data='1')],
 
         [
-            InlineKeyboardButton(f"⬆️ {up} :آپلود",callback_data='1'),
-            InlineKeyboardButton(f"⬇️ {down} :دانلود",callback_data='1',)
+            InlineKeyboardButton(f"⬆️ {up} :Upload",callback_data='1'),
+            InlineKeyboardButton(f"⬇️ {down} :Download",callback_data='1',)
         ],
-        [InlineKeyboardButton(f"{used} :میزان مصرف⏳", callback_data='1')],
+        [InlineKeyboardButton(f"{used} :အသုံးပြုမှူ့နှုန်း⏳", callback_data='1')],
         [InlineKeyboardButton(
-            f"📡 حجم باقی مانده : {traffic_remaining}", callback_data='1')],
+            f"📡 လက်ကျန်ပမာဏ : {traffic_remaining}", callback_data='1')],
         [InlineKeyboardButton(
-            f"🕒 زمان باقی مانده : {rem_time}", callback_data='1')],
-        [InlineKeyboardButton(f" 🌐 حجم کل: {total}", callback_data='1')],
+            f"🕒 ကျန်ရှိအချိန် : {rem_time}", callback_data='1')],
+        [InlineKeyboardButton(f" 🌐 စုစုပေါင်း: {total}", callback_data='1')],
         [InlineKeyboardButton(f"{expiry} 🔚", callback_data='1')],
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
@@ -242,9 +242,9 @@ async def help_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
 
 async def post_init(application: Application):
     await application.bot.set_my_commands([
-        BotCommand("/start", "استارت"),
-        BotCommand("/qrcode", "ساخت QRCode"),
-        BotCommand("/what", "چه نرم افزاری استفاده میکنید؟"),
+        BotCommand("/start", "စတင်ပါ။"),
+        BotCommand("/qrcode", "QR ကုဒ်ဖန်တီးခြင်း။"),
+        BotCommand("/what", "ဘယ်ဆော့ဝဲလ်ကို သုံးပါသလဲ။"),
     ])
 
 
