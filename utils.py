@@ -52,7 +52,7 @@ def check_used(user_index, data):
     return sizeFormat(data[user_index]['down'] + data[user_index]['up'])
 
 def status(user_index, data):
-    return "✅ فعال" if data[user_index]['enable'] else "⛔️غیرفعال"
+    return "✅ Active" if data[user_index]['enable'] else "⛔️Inactive"
 
 # checking the total amount of traffic
 def check_total(user_index, data):
@@ -82,7 +82,7 @@ def extract_time(time_rem):
             result = list(re.findall(
                 r"^(?!-)(\d*) day.?, (\d{1,2}):(\d{1,2}):", time_rem)[0])
     except IndexError:
-        return 'اتمام سرویس'
+        return 'Service completion'
 
     if len(result) == 3:
         day, hour, minute = result
@@ -90,14 +90,14 @@ def extract_time(time_rem):
         hour, minute = result
         day = ''
     if day != '':
-        day = day + ' روز و '
+        day = day + 'Day and'
 
     if hour != '0':
-        hour = hour + ' ساعت و '
+        hour = hour + 'Clock and'
     elif hour == '0':
         hour = ''
 
-    minute = minute + ' دقیقه'
+    minute = minute + 'Minute'
     rem_time = day + hour + minute
     return rem_time
 
@@ -105,9 +105,9 @@ def extract_time(time_rem):
 def check_expiryTime(user_index, data):
     time_stamp = data[user_index]['expiryTime']
     if time_stamp == 0:
-        return ['♾', 'زمان ♾']
+        return ['♾', 'Time ♾']
     if time_stamp < 0:
-        return [str(int(time_stamp / -86400000)) + " روز", str(int(time_stamp / -86400000)) + " روز"]
+        return [str(int(time_stamp / -86400000)) + " روز", str(int(time_stamp / -86400000)) + "Day"]
 
     s = time_stamp / 1000.0
 
