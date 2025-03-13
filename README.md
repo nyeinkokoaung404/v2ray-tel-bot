@@ -25,7 +25,7 @@ bash <(curl -Ls https://raw.githubusercontent.com/TeleDark/v2ray-tel-bot/main/in
 2. Clone the Project Repository:
 
    ```sh
-   git clone https://github.com/TeleDark/v2ray-tel-bot.git
+   git clone https://github.com/nyeinkokoaung404/v2ray-tel-bot.git
    cd v2ray-tel-bot
    ```
 3. open the config.yml file and put your Telegram bot token and information related to your panels in it
