@@ -2,7 +2,7 @@ import re
 import requests
 import json
 import pickle
-from keys import *
+from panels import *
 
 url_login = "login"
 url_lists = "xui/inbound/list"
