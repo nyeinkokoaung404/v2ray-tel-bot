@@ -1,0 +1,5 @@
+pyrogram
+base64
+asyncio
+pyzbar
+requests
