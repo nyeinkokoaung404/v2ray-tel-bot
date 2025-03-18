@@ -11,7 +11,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, 
 from pyrogram.enums import ParseMode, ChatType
 from adminpanel import setup_adminpanel_handlers
 import asyncio
-from keys import *
+from panels import *
 from utils import account_info
 from config import API_ID, API_HASH, BOT_TOKEN
 
