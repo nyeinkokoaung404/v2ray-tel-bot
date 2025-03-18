@@ -1,7 +1,7 @@
 import re
 import json
 import base64
-from keys import *
+from panels import *
 from datetime import datetime
 
 ONE_KB = 1024
